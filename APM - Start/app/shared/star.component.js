@@ -20,11 +20,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             StarComponent = (function () {
                 function StarComponent() {
-                    this.rating = 4;
                 }
                 StarComponent.prototype.ngOnChanges = function () {
                     this.starWidth = this.rating * 86 / 5;
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Number)
+                ], StarComponent.prototype, "rating", void 0);
                 StarComponent = __decorate([
                     core_1.Component({
                         selector: 'ai-star',
