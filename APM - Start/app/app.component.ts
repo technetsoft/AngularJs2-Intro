@@ -4,6 +4,7 @@ import 'rxjs/Rx'; //Load all features
 
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { WelcomeComponent } from './home/welcome.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 
 import { ProductListComponent } from './products/product-list.component';
 import { ProductService } from './services/product.service';
@@ -21,6 +22,9 @@ import { ProductService } from './services/product.service';
                 </ul>
             </div>
         </nav>
+        <div class='container'>
+            <router-outlet></router-outlet>
+        </div>
      </div>
     `,
     //directives: [ProductListComponent],
@@ -30,8 +34,8 @@ import { ProductService } from './services/product.service';
 
 @RouteConfig([
     { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
-    { path: '/products', name: 'Products', component: ProductListComponent }
-    //{ path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent }
+    { path: '/products', name: 'Products', component: ProductListComponent },
+    { path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent }
 ])
 
 export class AppComponent {
