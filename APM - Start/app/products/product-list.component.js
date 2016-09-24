@@ -89,7 +89,11 @@ System.register(['angular2/core', '../filter/product-filter.pipe', '../Shared/st
                 };
                 ;
                 ProductListComponent.prototype.ngOnInit = function () {
-                    console.log('In OnInit');
+                    console.log("In OnInit");
+                };
+                ;
+                ProductListComponent.prototype.onRatingClicked = function (message) {
+                    this.pageTitle = "Product List: " + message;
                 };
                 ;
                 ProductListComponent = __decorate([
