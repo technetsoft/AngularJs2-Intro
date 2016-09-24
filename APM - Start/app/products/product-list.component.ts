@@ -1,12 +1,14 @@
 import { Component, OnInit } from 'angular2/core';
 import { IProduct } from './iproduct';
 import { ProductFilterPipe } from '../filter/product-filter.pipe';
+import { StarComponent } from '../Shared/star.component';
 
 @Component({
     selector: 'pm-products',
     templateUrl: 'app/products/product-list.component.html',
     styleUrls: ['app/assets/css/product-list.component.css'],
-    pipes: [ProductFilterPipe]
+    pipes: [ProductFilterPipe],
+    directives: [StarComponent]
 })
 
 export class ProductListComponent implements OnInit {
