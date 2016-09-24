@@ -2,26 +2,39 @@ import { Component } from 'angular2/core';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import 'rxjs/Rx'; //Load all features
 
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { WelcomeComponent } from './home/welcome.component';
+
 import { ProductListComponent } from './products/product-list.component';
 import { ProductService } from './services/product.service';
 
 @Component({
     selector: 'pm-app',
     template: `
-    <div>
-        <h1>
-            {{pageTitle}} - {{textBody}}
-        </h1>
-        <div>
-            <pm-products></pm-products>
-        </div>
-    </div>
+     <div>
+        <nav class='navbar navbar-default'>
+            <div class='container-fluid'>
+                <a class='navbar-brand'>{{ pageTitle }}</a>
+                <ul class='nav navbar-nav'>
+                    <li><a [routerLink]="['Welcome']">Home</a></li>
+                    <li><a [routerLink]="['Products']">Product List</a></li>
+                </ul>
+            </div>
+        </nav>
+     </div>
     `,
-    directives: [ProductListComponent],
-    providers: [ProductService, HTTP_PROVIDERS]
+    //directives: [ProductListComponent],
+    directives: [ROUTER_DIRECTIVES],
+    providers: [ProductService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 
+@RouteConfig([
+    { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
+    { path: '/products', name: 'Products', component: ProductListComponent }
+    //{ path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent }
+])
+
 export class AppComponent {
-    pageTitle: string = "Angular 2 - Product Management";
-    textBody: string = "Component";
+    pageTitle: string = "Product Management";
+    //textBody: string = " Product Management";
 }

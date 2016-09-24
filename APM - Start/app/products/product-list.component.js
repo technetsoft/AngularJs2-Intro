@@ -53,7 +53,7 @@ System.register(['angular2/core', '../filter/product-filter.pipe', '../Shared/st
                 ;
                 ProductListComponent = __decorate([
                     core_1.Component({
-                        selector: 'pm-products',
+                        //selector: 'pm-products',
                         templateUrl: 'app/products/product-list.component.html',
                         styleUrls: ['app/assets/css/product-list.component.css'],
                         pipes: [product_filter_pipe_1.ProductFilterPipe],
