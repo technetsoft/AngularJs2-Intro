@@ -27,7 +27,7 @@ System.register(['angular2/core', '../filter/product-filter.pipe'], function(exp
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
-                    this.listFilter = 'cart';
+                    this.listFilter = '';
                     this.products = [
                         {
                             "productId": 1,
