@@ -22,8 +22,9 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
             }],
         execute: function() {
             ProductDetailComponent = (function () {
-                function ProductDetailComponent(_routeParams) {
+                function ProductDetailComponent(_routeParams, _router) {
                     this._routeParams = _routeParams;
+                    this._router = _router;
                     this.pageTitle = "Page Detail";
                     console.log(this._routeParams.get('id'));
                     var id = +this._routeParams.get('id');
@@ -32,12 +33,15 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 ProductDetailComponent.prototype.ngOnInit = function () {
                     console.log("Product Detail Component");
                 };
+                ProductDetailComponent.prototype.onBack = function () {
+                    this._router.navigate(['Products']);
+                };
                 ProductDetailComponent = __decorate([
                     core_1.Component({
                         //selector: 'pm-detail',
                         templateUrl: 'app/products/product-detail.component.html'
                     }), 
-                    __metadata('design:paramtypes', [router_1.RouteParams])
+                    __metadata('design:paramtypes', [router_1.RouteParams, router_1.Router])
                 ], ProductDetailComponent);
                 return ProductDetailComponent;
             }());

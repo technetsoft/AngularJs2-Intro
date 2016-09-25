@@ -5,8 +5,8 @@ import 'rxjs/Rx'; //Load all features
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductDetailComponent } from './products/product-detail.component';
-
 import { ProductListComponent } from './products/product-list.component';
+
 import { ProductService } from './services/product.service';
 
 @Component({
